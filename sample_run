@@ -1,0 +1,3 @@
+Open Powershell. User must have rights to write to Windows EventLog.
+. .\Log-Ping.ps1
+Ping-Hosts -hosts "c:\powershell\pinglog\hosts.txt"
