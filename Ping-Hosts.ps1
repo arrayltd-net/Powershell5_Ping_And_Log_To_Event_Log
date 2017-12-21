@@ -54,7 +54,7 @@ Function Write-StatusToEventLog($status, $c){
     Write-EventLog @params
 }
 
-Function Ping-Hosts
+Function Ping-Hosts{
  
   Param(
       [Parameter(
