@@ -28,7 +28,7 @@ Function Ping-Host($c){
     }
         
     return $StatusCodes[$Ping.StatusCode]
- }
+}
  
 Function Write-StatusToEventLog($status, $c){
     if($status -eq 0){
@@ -39,7 +39,7 @@ Function Write-StatusToEventLog($status, $c){
             EventID = 1000
             Message = "The ping to $c was $status."
         }
-     }
+    }
      
     if($status -ne 0){
         $params = @{
@@ -49,7 +49,7 @@ Function Write-StatusToEventLog($status, $c){
             EventID = 1001
             Message = "The ping to $c was $status."
         }
-     }
+    }
      
     Write-EventLog @params
 }
@@ -67,5 +67,5 @@ Function Ping-Hosts{
   foreach($c in $computers){               
      $status = Ping-Host $c
      Write-StatusToEventLog $status $c
-    }
+  }
 }
