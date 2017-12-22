@@ -5,6 +5,7 @@ Function Process-Ping($host_to_test){
 }
 
 Function Convert-StatusCode ($status){
+
     $StatusCodes = @{
             [uint32]0     = 'Success';
             [uint32]11001 = 'Buffer Too Small';
@@ -27,9 +28,15 @@ Function Convert-StatusCode ($status){
             [uint32]11018 = 'Bad Destination';
             [uint32]11032 = 'Negotiating IPSEC';
             [uint32]11050 = 'General Failure'
-            
+    
     }
-    return $StatusCodes[$status]
+    
+    try{
+        return $StatusCodes[$status]
+    }
+    catch{
+        return "Unspecified error. No status code returned. Problem could be DNS-related if pinging by hostname."
+    }
 }
 
 Function Output-Message($host_to_test, $verbose){
@@ -95,3 +102,4 @@ Function Ping-Hosts{
 }
 
  
+
