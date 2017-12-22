@@ -1,3 +1,7 @@
 Open Powershell. User must have rights to write to Windows EventLog.
 . .\Log-Ping.ps1
  Ping-Hosts -hosts "C:\powershell\ping-host\hosts.txt" -EventIDOnError "1001" -EventIDOnSuccess "1000" -source "Ping Test PS Script" 
+
+Output in Event Viewer > Windows Log > Application: 
+The ping to 4.2.2.2 reported: Success.
+The ping to 1.1.1.1 reported: Request Timed Out.
