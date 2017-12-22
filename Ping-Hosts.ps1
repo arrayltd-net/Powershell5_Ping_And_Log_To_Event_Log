@@ -37,7 +37,7 @@ Function Write-StatusToEventLog($status, $c){
             Source = 'Technical Support Company'
             EntryType = 'Information'
             EventID = 1000
-            Message = "The ping to $c was $status."
+            Message = "The ping to $c reported: $status."
         }
     }
      
@@ -47,7 +47,7 @@ Function Write-StatusToEventLog($status, $c){
             Source = 'Technical Support Company'
             EntryType = 'Error'
             EventID = 1001
-            Message = "The ping to $c was $status."
+            Message = "The ping to $c reported $status."
         }
     }
      
