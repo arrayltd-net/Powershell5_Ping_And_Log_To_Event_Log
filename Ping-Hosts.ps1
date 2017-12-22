@@ -1,4 +1,4 @@
- Function Process-Ping($host_to_test){
+Function Process-Ping($host_to_test){
 
     $Ping = Get-WmiObject -Class Win32_PingStatus -Filter "Address='$($host_to_test)' AND Timeout=1000"
     return $Ping.StatusCode
